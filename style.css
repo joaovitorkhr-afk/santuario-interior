@@ -1,0 +1,945 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
+
+:root {
+    --forest: #102a22;
+    --deep: #091b15;
+    --gold: #d9b978;
+    --gold-light: #ecd9aa;
+    --cream: #f4efe4;
+    --muted: #b6c0b7;
+    --line: rgba(217, 185, 120, 0.25);
+    --panel: #17372b;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'DM Sans', Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    background: var(--forest);
+    color: var(--cream);
+    font-family: var(--sans);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button,
+select {
+    cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--gold-light);
+    outline-offset: 3px;
+}
+
+.site-header {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 16px 5%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    background: #0c241d;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--serif);
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+.brand em {
+    color: var(--gold);
+    font-weight: 400;
+}
+
+.brand-mark {
+    color: var(--gold);
+    font-size: 28px;
+}
+
+.main-nav {
+    display: flex;
+    gap: clamp(12px, 2vw, 28px);
+}
+
+.main-nav a {
+    font-size: 12px;
+    color: #e0e5dc;
+}
+
+.main-nav a:hover {
+    color: var(--gold);
+}
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    color: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 8px 12px;
+}
+
+.hero {
+    min-height: 570px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    overflow: hidden;
+    padding: 65px 8%;
+    background: radial-gradient(
+        ellipse at 75% 35%,
+        #23483a,
+        #142f25 40%,
+        #0d241d 75%
+    );
+}
+
+.hero-content {
+    max-width: 520px;
+    z-index: 2;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    margin: 0 0 16px;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1,
+h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    letter-spacing: -0.035em;
+    line-height: 1.12;
+}
+
+h1 {
+    font-size: clamp(42px, 5.4vw, 70px);
+    margin-bottom: 22px;
+}
+
+h1 em,
+h2 em {
+    color: var(--gold);
+    font-weight: 400;
+}
+
+.hero-copy {
+    max-width: 390px;
+    color: #c6d0c7;
+    font-size: 14px;
+    margin-bottom: 28px;
+}
+
+.button {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 12px 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: transform 0.2s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button-gold {
+    background: var(--gold);
+    color: #1a2a20;
+}
+
+.button-gold:hover {
+    background: var(--gold-light);
+}
+
+.button-outline {
+    background: transparent;
+    border-color: var(--line);
+    color: var(--gold-light);
+}
+
+.hero-note {
+    color: #aebcb1;
+    font-size: 11px;
+    margin-top: 25px;
+}
+
+.moon-art {
+    height: 430px;
+    position: relative;
+    max-width: 540px;
+    width: 100%;
+    justify-self: center;
+    overflow: hidden;
+}
+
+.moon-glow {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: rgba(217, 185, 120, 0.09);
+    filter: blur(25px);
+    top: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.moon {
+    position: absolute;
+    width: 195px;
+    height: 195px;
+    top: 46px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at 35% 30%,
+        #f3e5bd,
+        #d3b778 65%,
+        #ac8b4d
+    );
+    box-shadow: 0 0 65px rgba(217, 185, 120, 0.18);
+}
+
+.moon::after {
+    content: '';
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    top: -13px;
+    left: 43px;
+    border-radius: 50%;
+    background: #17382c;
+}
+
+.star {
+    position: absolute;
+    color: var(--gold-light);
+    z-index: 2;
+}
+
+.star-one {
+    top: 44px;
+    left: 19%;
+    font-size: 23px;
+}
+
+.star-two {
+    top: 115px;
+    right: 12%;
+    font-size: 22px;
+}
+
+.hill {
+    position: absolute;
+    bottom: -85px;
+    width: 130%;
+    height: 230px;
+    left: -15%;
+    border-radius: 50% 50% 0 0;
+}
+
+.hill-back {
+    background: #1c4031;
+    transform: rotate(-8deg);
+    bottom: -105px;
+}
+
+.hill-front {
+    background: #10271f;
+    transform: rotate(7deg);
+    bottom: -140px;
+}
+
+.section-wrap {
+    width: min(1100px, 88%);
+    margin: 0 auto;
+}
+
+.welcome {
+    padding-top: 85px;
+    padding-bottom: 90px;
+    text-align: center;
+}
+
+.centered {
+    text-align: center;
+}
+
+h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    margin-bottom: 16px;
+}
+
+.section-intro,
+.muted {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.section-intro {
+    margin: 0 auto 38px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    text-align: left;
+}
+
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding: 25px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    background: rgba(255, 255, 255, 0.025);
+    transition: 0.2s;
+}
+
+.feature-card:hover {
+    border-color: var(--line);
+    transform: translateY(-3px);
+}
+
+.feature-icon {
+    color: var(--gold);
+    font-size: 26px;
+    margin-bottom: 7px;
+}
+
+.feature-card strong {
+    font-family: var(--serif);
+    font-size: 19px;
+}
+
+.feature-card > span:last-child {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.content-section {
+    padding: 75px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+.split-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 9%;
+    align-items: center;
+}
+
+.mantra-card {
+    padding: 35px 38px 24px;
+    background: #1a3a2e;
+    border: 1px solid var(--line);
+}
+
+.quote-mark {
+    color: var(--gold);
+    font-family: var(--serif);
+    font-size: 70px;
+    line-height: 0.8;
+}
+
+.mantra-text {
+    font-family: var(--serif);
+    font-size: clamp(22px, 2.7vw, 31px);
+    line-height: 1.4;
+    margin: 14px 0 25px;
+}
+
+.card-actions {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.text-button {
+    border: 0;
+    background: none;
+    color: var(--gold-light);
+    font-size: 12px;
+    padding: 10px 0;
+}
+
+.status-message {
+    color: var(--gold-light);
+    font-size: 11px;
+    min-height: 17px;
+    margin: 9px 0 0;
+}
+
+.meditation-section,
+.astrology-section,
+.knowledge-section {
+    background: #0d241d;
+}
+
+.meditation-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10%;
+    align-items: center;
+}
+
+.duration-picker {
+    display: flex;
+    gap: 8px;
+    margin: 23px 0 16px;
+}
+
+.duration-button {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--muted);
+    border-radius: 30px;
+    padding: 7px 16px;
+    font-size: 11px;
+}
+
+.duration-button.active {
+    border-color: var(--gold);
+    color: var(--gold-light);
+    background: rgba(217, 185, 120, 0.08);
+}
+
+.breathing-area {
+    text-align: center;
+}
+
+.breathing-orbit {
+    width: 240px;
+    height: 240px;
+    border: 1px solid rgba(217, 185, 120, 0.3);
+    border-radius: 50%;
+    margin: 0 auto 22px;
+    display: grid;
+    place-items: center;
+}
+
+.breathing-circle {
+    width: 178px;
+    height: 178px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #e9d8ac;
+    font-family: var(--serif);
+    font-size: 20px;
+    background: radial-gradient(
+        circle,
+        #41634d,
+        #264a38 55%,
+        #1b392d 75%
+    );
+    box-shadow: 0 0 38px rgba(217, 185, 120, 0.09);
+    transition: transform 4s ease-in-out;
+}
+
+.breathing-circle.breathing-in {
+    transform: scale(1.12);
+}
+
+.breathing-circle.breathing-out {
+    transform: scale(0.88);
+}
+
+.timer {
+    font-family: var(--serif);
+    font-size: 29px;
+    margin-bottom: 0;
+}
+
+.small {
+    font-size: 11px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+    margin-bottom: 28px;
+}
+
+.section-heading h2 {
+    margin-bottom: 0;
+}
+
+.heading-note {
+    max-width: 340px;
+    margin-bottom: 4px;
+}
+
+.tarot-layout {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.tarot-card {
+    width: 210px;
+    height: 300px;
+    padding: 9px;
+    background: #c7a45e;
+    border-radius: 100px 100px 12px 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.tarot-inner {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #e8d6a3;
+    border-radius: 95px 95px 7px 7px;
+    background: radial-gradient(circle, #234b39, #10281f 75%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 23px 10px;
+    color: var(--gold-light);
+}
+
+.tarot-symbol {
+    font-size: 76px;
+    line-height: 1;
+}
+
+.tarot-name {
+    font-family: var(--serif);
+    font-size: 21px;
+    text-align: center;
+}
+
+.tarot-reading h3,
+.astrology-card h3 {
+    font-family: var(--serif);
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.tarot-reading > p:not(.eyebrow) {
+    color: var(--muted);
+    max-width: 500px;
+    font-size: 14px;
+}
+
+.tarot-reading .button {
+    margin-top: 10px;
+}
+
+.astrology-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10%;
+    align-items: center;
+}
+
+.astrology-card {
+    background: #17372b;
+    border: 1px solid var(--line);
+    padding: 28px;
+}
+
+.astrology-card label,
+.journal-card label {
+    display: block;
+    color: var(--gold-light);
+    font-size: 11px;
+    margin-bottom: 8px;
+}
+
+select,
+input,
+textarea {
+    width: 100%;
+    color: var(--cream);
+    background: #102a22;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 4px;
+    padding: 12px;
+}
+
+select {
+    margin-bottom: 24px;
+}
+
+select option {
+    background: #102a22;
+}
+
+.zodiac-result {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    border-top: 1px solid var(--line);
+    padding-top: 22px;
+}
+
+#zodiac-symbol {
+    color: var(--gold);
+    font-size: 38px;
+    min-width: 45px;
+    text-align: center;
+}
+
+.zodiac-result h3 {
+    font-size: 24px;
+    margin-bottom: 6px;
+}
+
+.zodiac-result p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+.journal-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 9%;
+    align-items: start;
+}
+
+.journal-card {
+    background: #17372b;
+    border: 1px solid var(--line);
+    padding: 25px;
+}
+
+.journal-card input,
+.journal-card textarea {
+    margin-bottom: 18px;
+    resize: vertical;
+}
+
+.journal-card input::placeholder,
+.journal-card textarea::placeholder {
+    color: #7f9386;
+}
+
+.journal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.saved-entries {
+    margin-top: 20px;
+}
+
+.empty-state {
+    color: #9eaea2;
+    font-size: 12px;
+    border-top: 1px solid var(--line);
+    padding-top: 16px;
+}
+
+.entry-item {
+    padding: 15px 0;
+    border-top: 1px solid var(--line);
+}
+
+.entry-item h4 {
+    font-family: var(--serif);
+    font-size: 18px;
+    margin: 0 0 5px;
+}
+
+.entry-item p {
+    color: var(--muted);
+    font-size: 12px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    margin-bottom: 10px;
+}
+
+.entry-actions {
+    display: flex;
+    gap: 14px;
+}
+
+.entry-actions button {
+    background: none;
+    border: 0;
+    color: var(--gold-light);
+    font-size: 11px;
+    padding: 0;
+}
+
+.privacy-note {
+    color: #93a397;
+    font-size: 10px;
+    margin: 14px 0 0;
+}
+
+.centered-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.knowledge-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.knowledge-card {
+    padding: 26px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.knowledge-card > span {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+}
+
+.knowledge-card h3 {
+    font-family: var(--serif);
+    font-size: 23px;
+    margin: 18px 0 8px;
+}
+
+.knowledge-card p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+.site-footer {
+    padding: 34px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: var(--deep);
+}
+
+.site-footer p {
+    color: var(--muted);
+    font-size: 11px;
+    margin: 0;
+}
+
+@media (max-width: 850px) {
+    .site-header {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        display: none;
+        width: 100%;
+        flex-wrap: wrap;
+        padding: 8px 0 4px;
+    }
+
+    .main-nav.open {
+        display: flex;
+    }
+
+    .main-nav a {
+        padding: 5px 8px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 60px 6% 0;
+    }
+
+    .hero-content {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .moon-art {
+        height: 320px;
+        margin-top: 10px;
+    }
+
+    .moon {
+        width: 155px;
+        height: 155px;
+    }
+
+    .moon::after {
+        width: 150px;
+        height: 150px;
+        left: 34px;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .split-layout,
+    .meditation-panel,
+    .astrology-layout,
+    .journal-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .tarot-layout {
+        grid-template-columns: 170px 1fr;
+        gap: 25px;
+    }
+
+    .tarot-card {
+        width: 160px;
+        height: 240px;
+    }
+
+    .tarot-symbol {
+        font-size: 58px;
+    }
+
+    .tarot-name {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 520px) {
+    .section-wrap {
+        width: 88%;
+    }
+
+    .site-header {
+        padding: 13px 6%;
+    }
+
+    .brand {
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 46px;
+    }
+
+    .welcome {
+        padding-top: 62px;
+        padding-bottom: 60px;
+    }
+
+    .feature-grid {
+        gap: 10px;
+    }
+
+    .feature-card {
+        padding: 18px 14px;
+    }
+
+    .feature-card strong {
+        font-size: 17px;
+    }
+
+    .content-section {
+        padding: 55px 0;
+    }
+
+    .mantra-card {
+        padding: 25px 22px 18px;
+    }
+
+    .breathing-orbit {
+        width: 210px;
+        height: 210px;
+    }
+
+    .breathing-circle {
+        width: 155px;
+        height: 155px;
+    }
+
+    .tarot-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .tarot-card {
+        margin: 0 auto;
+    }
+
+    .tarot-reading {
+        text-align: center;
+    }
+
+    .astrology-card,
+    .journal-card {
+        padding: 20px;
+    }
+
+    .knowledge-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .site-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
